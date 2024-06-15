@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class clientApp {
 
-    static int PORT = 8000;
-    static String IP = "127.0.0.1";
+    static int PORT = 8080;
+    static String IP = "192.168.28.140";
 
 
     public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class clientApp {
             System.out.println("3- delete");
             System.out.println("4- exit");
 
-            int input = scanner.nextInt();
+            int input = Integer.parseInt(scanner.nextLine());
             switch (input){
                 case 1: {
                     String username, password;
@@ -66,7 +66,7 @@ public class clientApp {
                         System.out.println("3- get messages");
                         System.out.println("4- logout");
 
-                        int input2 = scanner.nextInt();
+                        int input2 = Integer.parseInt(scanner.nextLine());
                         switch (input2) {
                             case 1: {
                                 System.out.println("enter a text");
@@ -139,6 +139,7 @@ public class clientApp {
                     );
 
                     String result = receiver.nextLine();
+                    System.out.println(result);
                     if (Objects.equals(result, "[successful]")) {
                         System.out.println("sign up successfully done");
                         System.out.println("please enter login for login");
